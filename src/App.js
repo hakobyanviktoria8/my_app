@@ -1,41 +1,21 @@
 import './App.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-import {Home} from "./Components/Home";
-import {Movies} from "./Components/Movies";
-import {Series} from "./Components/Series";
+import {HomeWraper} from "./Components/HomeWraper/HomeWraper";
+import {Home} from "./Components/Home/Home";
+import {BrowserRouter} from "react-router-dom";
+import {Route, Routes} from "react-router";
+import {SelectedItem} from "./Components/SelectedItem/SelectedItem";
 
 function App() {
     return (
-        <Router>
-            <div>
-                <nav>
-                    <Link to="/">Home</Link>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomeWraper />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path=":type" element={<SelectedItem />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
 
-                    <Link to="/series">
-                            Series
-                    </Link>
-
-                    <Link to="/movies">Movies</Link>
-                </nav>
-
-                <Switch>
-                    <Route path="/series">
-                        <Series />
-                    </Route>
-                    <Route path="/movies">
-                        <Movies />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                </Switch>
-            </div>
-        </Router>
     );
 }
 

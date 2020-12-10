@@ -1,0 +1,19 @@
+.cart{
+    margin: 0 auto;
+}
+.cart div:hover{
+    transform: scale(1.01,1.01);
+    box-shadow: 0 0 8px gainsboro;
+}
+.cart img{
+    width: 100%;
+}
+.cart h3{
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 426px) {
+    :root{
+        font-size: 4vw;
+    }
+}
