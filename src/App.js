@@ -1,3 +1,4 @@
+import React from "react";
 import './App.css';
 import {HomeWraper} from "./Components/HomeWraper/HomeWraper";
 import {Home} from "./Components/Home/Home";
@@ -15,8 +16,8 @@ function App() {
                 </Route>
             </Routes>
         </BrowserRouter>
-
     );
 }
 
 export default App;
+
