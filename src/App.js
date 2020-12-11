@@ -12,7 +12,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomeWraper />}>
                     <Route path="/" element={<Home />} />
+                    <Route path="/my_app" element={<Home />} />
                     <Route path=":type" element={<SelectedItem />} />
+                    <Route path="/my_app/:type" element={<SelectedItem />} />
                 </Route>
             </Routes>
         </BrowserRouter>
